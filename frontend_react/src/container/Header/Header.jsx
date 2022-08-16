@@ -41,10 +41,11 @@ const Header = () => {
           alt="profile_circle"
           className="overlay_circle"
         />
-
       </motion.div>
 
-      <motion.div>
+      <motion.div
+        
+      >
 
       </motion.div>
     </div>
