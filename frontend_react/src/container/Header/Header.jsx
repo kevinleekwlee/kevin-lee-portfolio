@@ -20,6 +20,10 @@ const Header = () => {
               <h1 className="head-text">Micael</h1>
             </div>
           </div>
+
+          <div>
+            
+          </div>
         </div>
       </motion.div>
     </div>
