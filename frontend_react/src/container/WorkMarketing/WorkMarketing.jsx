@@ -4,16 +4,16 @@ import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
-import './Work.scss';
+import './WorkMarketing.scss';
 
-const Work = () => {
+const WorkMarketing = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 })
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "works"] | order(_updatedAt desc)';
+    const query = '*[_type == "worksMarketing"] | order(_updatedAt desc)';
 
     client.fetch(query)
       .then((data) => {
@@ -39,7 +39,7 @@ const Work = () => {
 
   return (
     <>
-      <h2 className="head-text"><span>Web Developer</span> Portfolio</h2>
+      <h2 className="head-text"><span>Business</span> Portfolio</h2>
 
       <div className="app__work-filter">
         {['All', 'UI/UX', 'Web App', 'Mobile App', 'React JS'].map((item, index) => (
@@ -109,7 +109,7 @@ const Work = () => {
 }
 
 export default AppWrap(
-  MotionWrap(Work, 'app__works'),
-  'work',
+  MotionWrap(WorkMarketing, 'app__works'),
+  'workMarketing',
   "app__primarybg"
 );

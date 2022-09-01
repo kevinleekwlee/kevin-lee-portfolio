@@ -9,7 +9,7 @@ const About = () => {
   const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
-     const query = '*[_type == "abouts"]';
+     const query = '*[_type == "abouts"] | order(_updatedAt desc)';
      
      client.fetch(query)
       .then((data) => setAbouts(data))
@@ -19,7 +19,7 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        I know that <span>Good Dev</span> <br /> means <span>Good Business</span>
+        Modern <span>web developer</span> <br /> with a <span>marketing mind</span> <br /> and <span>business acumen</span>
       </h2>
 
       <div className="app__profiles">
