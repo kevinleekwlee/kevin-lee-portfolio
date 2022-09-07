@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
+import { AiFillEye } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
@@ -42,7 +42,7 @@ const WorkMarketing = () => {
       <h2 className="head-text"><span>Business</span> Portfolio</h2>
 
       <div className="app__work-filter">
-        {['All', 'UI/UX', 'Web App', 'Mobile App', 'React JS'].map((item, index) => (
+        {['All', 'Web Projects', 'Brand Projects', 'Seasonal Campaigns', 'Product Campaigns'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -78,17 +78,6 @@ const WorkMarketing = () => {
                     <AiFillEye />
                   </motion.div>
                 </a>
-                <a href={work.codeLink} target="_blank" rel="noreferrer">
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25 }}
-                    className="app__flex"
-                  >
-                    <AiFillGithub />
-                  </motion.div>
-                </a>
-
               </motion.div>
             </div>
 
@@ -97,7 +86,7 @@ const WorkMarketing = () => {
               <p className="p-text" style={{ marginTop: 10 }}>{work.description}</p>
 
               <div className="app__work-tag app__flex">
-                <p className="p-text">{work.tags[0]}</p>
+                <p className="p-text">{work.tags[1]}</p>
               </div>
             </div>
 
