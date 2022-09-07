@@ -40,14 +40,14 @@
     }
 }
 
-.app__work-portfolio {
+.app__work-portfolio-dev {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
     .app__work-item {
-        height: 450px;
+        height: 350px;
         width: 270px;
         flex-direction: column;
 
