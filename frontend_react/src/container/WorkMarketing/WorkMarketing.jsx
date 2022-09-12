@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
+import { AiFillEye } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
-import './Work.scss';
+import './WorkMarketing.scss';
 
-const Work = () => {
+const WorkMarketing = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 })
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "works"] | order(_updatedAt desc)';
+    const query = '*[_type == "worksMarketing"] | order(_updatedAt desc)';
 
     client.fetch(query)
       .then((data) => {
@@ -39,10 +39,10 @@ const Work = () => {
 
   return (
     <>
-      <h2 className="head-text"><span>Web Developer</span> Portfolio</h2>
+      <h2 className="head-text"><span>Business</span> Portfolio</h2>
 
       <div className="app__work-filter">
-        {['All', 'Group Projects', 'Generators', 'Search Engines', 'Lifestyle Apps', 'Content Management Systems', 'Games'].map((item, index) => (
+        {['All', 'Web Projects', 'Brand Projects', 'Seasonal Campaigns', 'Product Campaigns'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -56,7 +56,7 @@ const Work = () => {
       <motion.div
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="app__work-portfolio-dev"
+        className="app__work-portfolio"
       >
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
@@ -78,17 +78,6 @@ const Work = () => {
                     <AiFillEye />
                   </motion.div>
                 </a>
-                <a href={work.codeLink} target="_blank" rel="noreferrer">
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25 }}
-                    className="app__flex"
-                  >
-                    <AiFillGithub />
-                  </motion.div>
-                </a>
-
               </motion.div>
             </div>
 
@@ -109,7 +98,7 @@ const Work = () => {
 }
 
 export default AppWrap(
-  MotionWrap(Work, 'app__works'),
-  'work',
+  MotionWrap(WorkMarketing, 'app__works'),
+  'workMarketing',
   "app__primarybg"
 );
