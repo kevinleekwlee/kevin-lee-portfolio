@@ -100,5 +100,5 @@ const WorkMarketing = () => {
 export default AppWrap(
   MotionWrap(WorkMarketing, 'app__works'),
   'workMarketing',
-  "app__primarybg"
+  "app__secondarybg"
 );
