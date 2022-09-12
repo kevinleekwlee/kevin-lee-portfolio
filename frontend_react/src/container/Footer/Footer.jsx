@@ -37,7 +37,7 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Take a coffee & chat with me</h2>
+      <h2 className="head-text">Let's Connect!</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card">
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {!isFormSubmitted ?
+      {/* {!isFormSubmitted ?
       <div className="app__footer-form app__flex">
         <div className="app__flex">
           <input className="p-text" type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput} />
@@ -71,7 +71,7 @@ const Footer = () => {
       </div>
       : <div>
           <h3 className="head-text">Thank you for getting in touch!</h3>
-      </div>}
+      </div>} */}
     </>
   )
 }
@@ -79,5 +79,5 @@ const Footer = () => {
 export default AppWrap(
   MotionWrap(Footer, 'app__footer'),
   'contact',
-  'app__whitebg'
+  'app__secondarybg'
 )

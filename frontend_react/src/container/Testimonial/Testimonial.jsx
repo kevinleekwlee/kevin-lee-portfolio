@@ -9,7 +9,7 @@ const Testimonial = () => {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
-    const brandsQuery = '*[_type == "brands"]';
+    const brandsQuery = '*[_type == "brands"] | order(_updatedAt desc)';
 
     client.fetch(brandsQuery)
       .then((data) => {
@@ -19,7 +19,7 @@ const Testimonial = () => {
 
   return (
     <>
-      <h2 className="head-text">Brands I've Loved Working For</h2>
+      <h2 className="head-text">Previous Brands</h2>
 
       <div className="app__testimonial-brands app__flex">
         {brands.map((brand) => (
