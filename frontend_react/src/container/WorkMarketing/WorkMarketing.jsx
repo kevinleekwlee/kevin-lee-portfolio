@@ -99,6 +99,6 @@ const WorkMarketing = () => {
 
 export default AppWrap(
   MotionWrap(WorkMarketing, 'app__works'),
-  'workMarketing',
+  'business portfolio',
   "app__secondarybg"
 );
