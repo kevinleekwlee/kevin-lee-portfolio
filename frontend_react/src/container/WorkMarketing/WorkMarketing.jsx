@@ -7,7 +7,7 @@ import { urlFor, client } from '../../client';
 import './WorkMarketing.scss';
 
 const WorkMarketing = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState('Web Projects');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 })
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
@@ -18,7 +18,7 @@ const WorkMarketing = () => {
     client.fetch(query)
       .then((data) => {
         setWorks(data);
-        setFilterWork(data);
+        setFilterWork(data.filter((work) => work.tags.includes('Web Projects')));
       })
   }, [])
 
