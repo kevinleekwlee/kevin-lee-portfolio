@@ -1,7 +1,6 @@
 import email from '../assets/email.png';
 import mobile from '../assets/mobile.png';
 import git from '../assets/git.png';
-import graphql from '../assets/graphql.png';
 import javascript from '../assets/javascript.png';
 import node from '../assets/node.png';
 import react from '../assets/react.png';
@@ -16,7 +15,6 @@ export default {
   email,
   mobile,
   git,
-  graphql,
   javascript,
   node,
   react,
